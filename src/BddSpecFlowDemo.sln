@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BddSpecFlowDemo", "BddSpecF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BddSpecFlowDemo.Tests", "BddSpecFlowDemo.Tests\BddSpecFlowDemo.Tests.csproj", "{2D5EB791-4493-4A5B-A78A-33FFAEBD5B02}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BddSpecFlowDemo.FunctionalTests", "BddSpecFlowDemo.FunctionalTests\BddSpecFlowDemo.FunctionalTests.csproj", "{0A598D9F-41B3-4CEB-922A-0D1A475EC365}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{2D5EB791-4493-4A5B-A78A-33FFAEBD5B02}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D5EB791-4493-4A5B-A78A-33FFAEBD5B02}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D5EB791-4493-4A5B-A78A-33FFAEBD5B02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A598D9F-41B3-4CEB-922A-0D1A475EC365}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A598D9F-41B3-4CEB-922A-0D1A475EC365}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A598D9F-41B3-4CEB-922A-0D1A475EC365}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A598D9F-41B3-4CEB-922A-0D1A475EC365}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
