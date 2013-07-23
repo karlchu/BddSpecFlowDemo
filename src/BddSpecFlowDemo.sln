@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BddSpecFlowDemo", "BddSpecFlowDemo\BddSpecFlowDemo.csproj", "{009A5187-AE4E-405C-96DC-711E56626B69}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BddSpecFlowDemo.Tests", "BddSpecFlowDemo.Tests\BddSpecFlowDemo.Tests.csproj", "{2D5EB791-4493-4A5B-A78A-33FFAEBD5B02}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{009A5187-AE4E-405C-96DC-711E56626B69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{009A5187-AE4E-405C-96DC-711E56626B69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{009A5187-AE4E-405C-96DC-711E56626B69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D5EB791-4493-4A5B-A78A-33FFAEBD5B02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D5EB791-4493-4A5B-A78A-33FFAEBD5B02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D5EB791-4493-4A5B-A78A-33FFAEBD5B02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D5EB791-4493-4A5B-A78A-33FFAEBD5B02}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
