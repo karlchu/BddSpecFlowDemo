@@ -1,0 +1,18 @@
+﻿@model KeyValuePair<BddSpecFlowDemo.Simulation.SimulatorKey, bool>
+
+
+@{
+    var mode = Model.Value ? "simulated" : "real";
+    var newMode = !Model.Value ? "simulated" : "real";
+    var currentValue = !Model.Value;
+}
+<form id="@Model.Key" action="@Url.Action("Switch", "Simulators")" method="post">
+<input type="hidden" name="simulatorKey" value="@Model.Key" />
+<input type="hidden" name="value" value="@currentValue.ToString()" />
+<input type="submit" value="Switch to @newMode" />
+<span class="@mode">
+    @Model.Key
+        is
+    @mode
+</span>
+</form>

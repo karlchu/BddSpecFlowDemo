@@ -1,0 +1,61 @@
+﻿@model BddSpecFlowDemo.Controllers.SimulatorsViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>title</title> 
+        <style type="text/css">
+            .header h1 {
+                font-family: Tahoma;
+                text-decoration: underline;
+            }
+
+            .content {
+                font-family: Tahoma;
+                font-size: large;
+                font-variant: normal;
+                font-weight: bold;
+            }
+
+            .content input {
+                font-family: Tahoma;
+                font-variant: normal;
+                font-weight: bold;
+                width: 15em;
+            }
+
+            .content span.real { color: #008800; }
+
+            .content span.simulated { color: #FF9900; }
+        </style>
+    </head>
+    <body>
+        <div>
+            <div class="home">
+                <a href="/">Home</a>
+            </div>
+            <div>
+                <h3>IP @Model.Ip
+                    <br/>
+                    Host @Request.UserHostName
+                </h3>
+            </div>
+            <div class="header">
+                <h1>Simulator status</h1>
+            </div>
+            <div class="content">
+                @{
+                    foreach (var model in Model.Simulators)
+                    {
+                        Html.RenderPartial("Toggle", model);
+                    }
+                }
+            </div>
+        </div>
+    </body>
+</html>

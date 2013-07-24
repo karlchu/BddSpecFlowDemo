@@ -13,4 +13,4 @@ Scenario: Search by title
 
 Scenario: Search without result
 	When I search the title for the word 'baby'
-	Then I should get a 404 response
+	Then I should get an empty response
