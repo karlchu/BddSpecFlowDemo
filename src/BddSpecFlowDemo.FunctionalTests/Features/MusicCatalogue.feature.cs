@@ -118,6 +118,32 @@ this.FeatureBackground();
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Search by artist")]
+        [NUnit.Framework.IgnoreAttribute()]
+        [NUnit.Framework.TestCaseAttribute("yanni", "Live at the Acropolis", "Yanni", null)]
+        [NUnit.Framework.TestCaseAttribute("pink", "Dark Side of The Moon", "Pink Floyd", null)]
+        public virtual void SearchByArtist(string searchString, string title, string artist, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "ignore"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search by artist", @__tags);
+#line 19
+this.ScenarioSetup(scenarioInfo);
+#line 3
+this.FeatureBackground();
+#line 20
+ testRunner.When(string.Format("I search artists for \'{0}\'", searchString), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 21
+ testRunner.Then(string.Format("I should get \'{0}\' by \'{1}\'", title, artist), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

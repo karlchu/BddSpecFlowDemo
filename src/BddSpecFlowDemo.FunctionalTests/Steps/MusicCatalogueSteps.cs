@@ -7,10 +7,10 @@ namespace BddSpecFlowDemo.FunctionalTests.Steps
     [Binding]
     public class MusicCatalogueSteps
     {
-        protected string SearchByTitleResponse
+        protected string SearchResponse
         {
-            get { return (string) ScenarioContext.Current["SearchByTitleResponse"]; }
-            set { ScenarioContext.Current.Add("SearchByTitleResponse", value); }
+            get { return (string) ScenarioContext.Current["SearchResponse"]; }
+            set { ScenarioContext.Current.Add("SearchResponse", value); }
         }
 
         [Given(@"I have the following items in the catalogue")]
@@ -27,19 +27,25 @@ namespace BddSpecFlowDemo.FunctionalTests.Steps
         [When(@"I search the title for the word '(.*)'")]
         public void WhenISearchTheTitleForTheWord(string word)
         {
-            SearchByTitleResponse = MusicCatalogueService.SearchAlbumByTitle(word);
+            SearchResponse = MusicCatalogueService.SearchAlbumByTitle(word);
+        }
+
+        [When(@"I search artists for '(.*)'")]
+        public void WhenISearchArtistsFor(string word)
+        {
+            SearchResponse = MusicCatalogueService.SearchAlbumByArtist(word);
         }
 
         [Then(@"I should get '(.*)' by '(.*)'")]
         public void ThenIShouldGetBy(string title, string artist)
         {
-            Assert.That(SearchByTitleResponse, Is.EqualTo(string.Format("{0}|{1}", title, artist)));
+            Assert.That(SearchResponse, Is.EqualTo(string.Format("{0}|{1}", title, artist)));
         }
 
         [Then(@"I should get an empty response")]
         public void ThenIShouldGetAnEmptyResponse()
         {
-            Assert.That(SearchByTitleResponse, Is.Empty);
+            Assert.That(SearchResponse, Is.Empty);
         }
 
         protected MusicCatalogueService MusicCatalogueService

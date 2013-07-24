@@ -14,3 +14,12 @@ Scenario: Search by title
 Scenario: Search without result
 	When I search the title for the word 'baby'
 	Then I should get an empty response
+
+@ignore
+Scenario Outline: Search by artist
+	When I search artists for '<search string>'
+	Then I should get '<title>' by '<artist>'
+Examples: 
+	| search string | title                 | artist     |
+	| yanni         | Live at the Acropolis | Yanni      |
+	| pink          | Dark Side of The Moon | Pink Floyd |

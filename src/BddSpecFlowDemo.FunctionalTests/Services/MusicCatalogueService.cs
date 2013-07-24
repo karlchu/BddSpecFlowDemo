@@ -23,5 +23,18 @@ namespace BddSpecFlowDemo.FunctionalTests.Services
                 return string.Empty;
             }
         }
+
+        public string SearchAlbumByArtist(string word)
+        {
+            var webClient = new WebClient();
+            try
+            {
+                return webClient.DownloadString(string.Format("{0}albums/search?artist={1}", _baseUrl, word));
+            }
+            catch (WebException)
+            {
+                return string.Empty;
+            }
+        }
     }
 }
