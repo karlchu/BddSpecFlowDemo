@@ -26,5 +26,13 @@ namespace BddSpecFlowDemo.Services
                        ? null
                        : new Album {Title = foundTitle, Artist = data[foundTitle]};
         }
+
+        public Album SearchByArtist(string searchString)
+        {
+            var foundTitle = data.Keys.FirstOrDefault(title => data[title].ToUpper().Contains(searchString.ToUpper()));
+            return string.IsNullOrEmpty(foundTitle)
+                       ? null
+                       : new Album { Title = foundTitle, Artist = data[foundTitle] };
+        }
     }
 }

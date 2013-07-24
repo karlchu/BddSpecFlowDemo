@@ -21,18 +21,36 @@ namespace BddSpecFlowDemo.Simulation.Services
         {
             if (_simulatorDecider.ShouldSimulate(SimulatorKey.Albums))
             {
-                return SearchInSimulatedStorage(title);
+                return SearchByTitleInSimulatedStorage(title);
             }
             return _albumsService.SearchByTitle(title);
         }
 
-        private Album SearchInSimulatedStorage(string searchString)
+        public Album SearchByArtist(string searchString)
+        {
+            if (_simulatorDecider.ShouldSimulate(SimulatorKey.Albums))
+            {
+                return SearchByArtistInSimulatedStorage(searchString);
+            }
+            return _albumsService.SearchByArtist(searchString);
+        }
+
+        private Album SearchByTitleInSimulatedStorage(string searchString)
         {
             var allAlbums = _albumStorage.GetAll();
             var foundTitle = allAlbums.Keys.FirstOrDefault(title => title.ToUpper().Contains(searchString.ToUpper()));
             return string.IsNullOrEmpty(foundTitle)
                        ? null
                        : new Album {Title = foundTitle, Artist = allAlbums[foundTitle]};
+        }
+
+        private Album SearchByArtistInSimulatedStorage(string searchString)
+        {
+            var allAlbums = _albumStorage.GetAll();
+            var foundTitle = allAlbums.Keys.FirstOrDefault(title => allAlbums[title].ToUpper().Contains(searchString.ToUpper()));
+            return string.IsNullOrEmpty(foundTitle)
+                       ? null
+                       : new Album { Title = foundTitle, Artist = allAlbums[foundTitle] };
         }
     }
 }

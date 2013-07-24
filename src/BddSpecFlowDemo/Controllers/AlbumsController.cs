@@ -1,5 +1,6 @@
 ﻿using System.Web;
 using System.Web.Mvc;
+using BddSpecFlowDemo.Models;
 using BddSpecFlowDemo.Services;
 
 namespace BddSpecFlowDemo.Controllers
@@ -21,17 +22,18 @@ namespace BddSpecFlowDemo.Controllers
             return Content("");
         }
 
-        public ActionResult Search(string title)
+        public ActionResult Search(string title = "", string artist = "")
         {
-            var album = _albumsService.SearchByTitle(title);
+            Album album;
+            album = string.IsNullOrEmpty(title) 
+                ? _albumsService.SearchByArtist(artist) 
+                : _albumsService.SearchByTitle(title);
+
             if (album != null)
             {
                 return Content(string.Format("{0}|{1}", album.Title, album.Artist));
             }
-            else
-            {
-                throw new HttpException(404, "Album not found");
-            }
+            throw new HttpException(404, "Album not found");
         }
     }
 }

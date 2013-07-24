@@ -15,7 +15,6 @@ Scenario: Search without result
 	When I search the title for the word 'baby'
 	Then I should get an empty response
 
-@ignore
 Scenario Outline: Search by artist
 	When I search artists for '<search string>'
 	Then I should get '<title>' by '<artist>'
